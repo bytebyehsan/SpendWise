@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpendWise - Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>SpendWise</h1>
+      <p>Personal Expense Tracker</p>
+    </div>
+    <span class="status">● Full Stack App</span>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <div class="card">
+        <span>Total Balance</span>
+        <strong id="balance">৳0.00</strong>
+      </div>
+      <div class="card income-card">
+        <span>Total Income</span>
+        <strong id="income">৳0.00</strong>
+      </div>
+      <div class="card expense-card">
+        <span>Total Expense</span>
+        <strong id="expense">৳0.00</strong>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Add Transaction</h2>
+        <form id="transactionForm">
+          <label>Title
+            <input id="title" type="text" placeholder="e.g. Monthly salary" required>
+          </label>
+
+          <label>Amount
+            <input id="amount" type="number" min="0" step="0.01" placeholder="e.g. 5000" required>
+          </label>
+
+          <label>Type
+            <select id="type" required>
+              <option value="expense">Expense</option>
+              <option value="income">Income</option>
+            </select>
+          </label>
+
+          <label>Category
+            <select id="category" required>
+              <option>Food</option>
+              <option>Transport</option>
+              <option>Shopping</option>
+              <option>Education</option>
+              <option>Bills</option>
+              <option>Salary</option>
+              <option>Freelance</option>
+              <option>Entertainment</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>Date
+            <input id="date" type="date" required>
+          </label>
+
+          <label>Note
+            <textarea id="note" placeholder="Optional note"></textarea>
+          </label>
+
+          <button type="submit">+ Add Transaction</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading">
+          <h2>Transactions</h2>
+          <input id="search" class="search" type="text" placeholder="Search...">
+        </div>
+        <div id="message" class="message"></div>
+        <div id="transactions" class="transactions"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>SpendWise • Built with HTML, CSS, JavaScript, Node.js, Express & MongoDB</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
